@@ -136,7 +136,8 @@ tracker = EmissionsTracker(
     output_file=OUTPUT_FILE,
     project_name="LLM_Benchmark",
     measure_power_secs=1,
-    tracking_mode="process"
+    tracking_mode="process",
+    log_level="warning"  # Reduce log noise by only showing warnings and errors
 )
 
 # Initialize list to store metrics for each prompt
