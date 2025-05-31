@@ -14,6 +14,6 @@ resources:
 
 init:
   - pip install poetry
-  - git clone https://github.com/ohdoking/infelens.git /infelens
-  - cd /infelens
+  - git clone https://github.com/ohdoking/infelens.git /workflow/infelens
+  - cd /workflow/infelens
   - poetry install --no-root
