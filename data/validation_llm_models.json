@@ -1,12 +1,13 @@
 [
     {
-      "model_name": "Meta LLaMA 2 7B",
-      "huggingface_model": "meta-llama/Llama-2-7b",
-      "num_params": "7B",
-      "hidden_size": 4096,
-      "num_layers": 32,
-      "vocab_size": 32000,
-      "seq_length": 4096,
-      "model_type": "Transformer (Llama 2)"
+        "model_name": "Qwen (7B)",
+        "huggingface_model": "Qwen/Qwen-7B",
+        "num_params": "7B",
+        "hidden_size": 4096,
+        "num_layers": 32,
+        "vocab_size": 151936,
+        "seq_length": 8192,
+        "model_type": "Transformer (Qwen)"
     }
-  ]
+]
+  
