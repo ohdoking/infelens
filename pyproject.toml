@@ -13,6 +13,9 @@ torch = "^2.2.0"
 accelerate = "^0.27.2"
 bitsandbytes = "^0.42.0"
 codecarbon = "^2.3.4"
+huggingface-hub = "^0.32.3"
+datasets = "^3.6.0"
+pandas = "^2.2.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"

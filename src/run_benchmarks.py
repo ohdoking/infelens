@@ -162,10 +162,16 @@ def merge_results(results: List[BenchmarkResult], output_file: str):
         }
     }
     
+    # Save timestamped version
     with open(output_file, 'w') as f:
         json.dump(merged_data, f, indent=2)
-    
     print(f"\nMerged results saved to: {output_file}")
+    
+    # Save latest version
+    latest_file = os.path.join(os.path.dirname(output_file), "merged_benchmarks_latest.json")
+    with open(latest_file, 'w') as f:
+        json.dump(merged_data, f, indent=2)
+    print(f"Latest results saved to: {latest_file}")
 
 def main():
     args = parse_args()
@@ -218,7 +224,7 @@ def main():
     else:
         args.output = os.path.join("output", args.output)
     
-    # Merge and save results
+    # Merge and save results (both timestamped and latest versions)
     merge_results(results, args.output)
     
     # Print summary
