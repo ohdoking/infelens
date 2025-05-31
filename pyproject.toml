@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "llm-energy-measurement"
+version = "0.1.0"
+description = "A tool to measure energy consumption and runtime performance of Language Learning Models"
+authors = ["Dokeun Oh <ohdoking@gmail.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.13,<3.14"
+transformers = "^4.37.2"
+torch = "^2.2.0"
+accelerate = "^0.27.2"
+bitsandbytes = "^0.42.0"
+codecarbon = "^2.3.4"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+black = "^24.1.1"
+isort = "^5.13.2"
+flake8 = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=src"

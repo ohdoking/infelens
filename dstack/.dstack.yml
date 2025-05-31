@@ -1,0 +1,13 @@
+type: dev-environment
+name: infelens-proj-dev
+
+python: "3.12"
+# Uncomment to use a custom Docker image
+#image: dstackai/base:py3.13-0.7-cuda-12.1
+ide: cursor
+
+resources:
+  gpu:
+    # memory: 8GB
+    vendor: nvidia
+    name: RTX070

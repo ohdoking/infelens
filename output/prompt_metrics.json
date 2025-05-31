@@ -1,0 +1,49 @@
+{
+  "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "total_prompts": 5,
+  "prompts": [
+    {
+      "prompt": "Give three tips for staying healthy.",
+      "runtime_seconds": 1.5438470421358943,
+      "energy_joules": 0.8697208036092576,
+      "co2_emissions_kg": 4.1781256261169256e-06,
+      "response": "Give three tips for staying healthy."
+    },
+    {
+      "prompt": "What are the three primary colors?",
+      "runtime_seconds": 0.7690381659194827,
+      "energy_joules": 0.4316474284686148,
+      "co2_emissions_kg": 6.976533275409876e-07,
+      "response": "What are the three primary colors?"
+    },
+    {
+      "prompt": "Describe the structure of an atom.",
+      "runtime_seconds": 0.1997637078166008,
+      "energy_joules": 0.4925362335792743,
+      "co2_emissions_kg": 2.0060269795784293e-07,
+      "response": "Describe the structure of an atom."
+    },
+    {
+      "prompt": "How can we reduce air pollution?",
+      "runtime_seconds": 0.11333195818588138,
+      "energy_joules": 0.5418038775613999,
+      "co2_emissions_kg": 1.3674015218323828e-07,
+      "response": "How can we reduce air pollution?"
+    },
+    {
+      "prompt": "Describe a time when you had to make a difficult decision.",
+      "runtime_seconds": 4.786519583314657,
+      "energy_joules": 1.7433577629292538,
+      "co2_emissions_kg": 2.2918205448494327e-05,
+      "response": "Describe a time when you had to make a difficult decision. What was the situation? How did you make your decision? What were the consequences? How did you feel before and after making the decision? How did this experience impact you? Use specific details to bring the reader into the scene."
+    }
+  ],
+  "summary": {
+    "total_runtime": 7.412500457372516,
+    "total_energy": 4.079066106147801,
+    "total_co2": 2.813132725229332e-05,
+    "average_runtime": 1.4825000914745032,
+    "average_energy": 0.8158132212295601,
+    "average_co2": 5.626265450458664e-06
+  }
+}

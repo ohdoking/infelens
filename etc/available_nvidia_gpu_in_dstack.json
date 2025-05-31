@@ -1,0 +1,38 @@
+[
+  {
+    "instance_type": "NVIDIA GeForce RTX 3070"
+  },
+  {
+    "instance_type": "NVIDIA GeForce RTX 3090"
+  },
+  {
+    "instance_type": "NVIDIA GeForce RTX 4070 Ti"
+  },
+  {
+    "instance_type": "NVIDIA GeForce RTX 4080"
+  },
+  {
+    "instance_type": "NVIDIA GeForce RTX 4080 SUPER"
+  },
+  {
+    "instance_type": "NVIDIA GeForce RTX 4090"
+  },
+  {
+    "instance_type": "NVIDIA RTX 2000 Ada Generation"
+  },
+  {
+    "instance_type": "NVIDIA RTX 4000 Ada Generation"
+  },
+  {
+    "instance_type": "NVIDIA RTX A4000"
+  },
+  {
+    "instance_type": "NVIDIA RTX A4500"
+  },
+  {
+    "instance_type": "NVIDIA RTX A5000"
+  },
+  {
+    "instance_type": "NVIDIA RTX A6000"
+  }
+]

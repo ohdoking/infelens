@@ -1,0 +1,61 @@
+{
+  "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "total_prompts": 5,
+  "hardware_info": {
+    "gpu_available": false,
+    "gpu_count": 0,
+    "gpu_devices": [
+      {
+        "name": "CPU",
+        "memory_total": "N/A",
+        "memory_free": "N/A"
+      }
+    ],
+    "device_name": "CPU"
+  },
+  "prompts": [
+    {
+      "prompt": "Give three tips for staying healthy.",
+      "runtime_seconds": 0.44647287484258413,
+      "energy_joules": 1.0444533741669726,
+      "co2_emissions_kg": 4.796154455314206e-07,
+      "response": "Give three tips for staying healthy."
+    },
+    {
+      "prompt": "What are the three primary colors?",
+      "runtime_seconds": 0.2660843329504132,
+      "energy_joules": 0.39917780201788994,
+      "co2_emissions_kg": 1.9294552411550867e-07,
+      "response": "What are the three primary colors?"
+    },
+    {
+      "prompt": "Describe the structure of an atom.",
+      "runtime_seconds": 0.19849170790985227,
+      "energy_joules": 0.06555495349992997,
+      "co2_emissions_kg": 1.5756051187790364e-07,
+      "response": "Describe the structure of an atom."
+    },
+    {
+      "prompt": "How can we reduce air pollution?",
+      "runtime_seconds": 0.36819649999961257,
+      "energy_joules": 0.25195533925574276,
+      "co2_emissions_kg": 2.531726711413079e-07,
+      "response": "How can we reduce air pollution?"
+    },
+    {
+      "prompt": "Describe a time when you had to make a difficult decision.",
+      "runtime_seconds": 4.408047332894057,
+      "energy_joules": 1.6543651992087254,
+      "co2_emissions_kg": 1.8410684617223418e-05,
+      "response": "Describe a time when you had to make a difficult decision. What was the situation? How did you make your decision? What were the consequences? How did you feel before and after making the decision? How did this experience impact you? Use specific details to bring the reader into the scene."
+    }
+  ],
+  "summary": {
+    "total_runtime": 5.687292748596519,
+    "total_energy": 3.4155066681492605,
+    "total_co2": 1.9493978769889557e-05,
+    "average_runtime": 1.137458549719304,
+    "average_energy": 0.6831013336298521,
+    "average_co2": 3.898795753977911e-06
+  }
+}

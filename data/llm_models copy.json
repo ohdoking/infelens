@@ -1,0 +1,93 @@
+[
+    {
+      "model_name": "GPT-2 (XL, 1.5B)",
+      "huggingface_model": "openai-community/gpt2-xl",
+      "num_params": "1.558B",
+      "hidden_size": 1600,
+      "num_layers": 48,
+      "vocab_size": 50257,
+      "seq_length": 1024,
+      "model_type": "Transformer (causal)"
+    },
+    {
+      "model_name": "GPT-Neo 2.7B",
+      "huggingface_model": "EleutherAI/gpt-neo-2.7B",
+      "num_params": "2.7B",
+      "hidden_size": 2560,
+      "num_layers": 32,
+      "vocab_size": 50257,
+      "seq_length": 2048,
+      "model_type": "Transformer (GPT-Neo)"
+    },
+    {
+      "model_name": "GPT-J 6B",
+      "huggingface_model": "EleutherAI/gpt-j-6b",
+      "num_params": "6.05B",
+      "hidden_size": 4096,
+      "num_layers": 28,
+      "vocab_size": 50257,
+      "seq_length": 2048,
+      "model_type": "Transformer (GPT-J)"
+    },
+    {
+      "model_name": "GPT-NeoX 20B",
+      "huggingface_model": "EleutherAI/gpt-neox-20b",
+      "num_params": "20B",
+      "hidden_size": 6144,
+      "num_layers": 44,
+      "vocab_size": 50432,
+      "seq_length": 2048,
+      "model_type": "Transformer (GPT-NeoX)"
+    },
+    {
+      "model_name": "MPT-7B",
+      "huggingface_model": "mosaicml/mpt-7b",
+      "num_params": "7B",
+      "hidden_size": 2048,
+      "num_layers": 24,
+      "vocab_size": 50368,
+      "seq_length": 2048,
+      "model_type": "Transformer (MPT)"
+    },
+    {
+      "model_name": "Falcon-7B",
+      "huggingface_model": "tiiuae/falcon-7b",
+      "num_params": "7B",
+      "hidden_size": 4096,
+      "num_layers": 64,
+      "vocab_size": 65024,
+      "seq_length": 2048,
+      "model_type": "Transformer (Falcon)"
+    },
+    {
+      "model_name": "Mistral-7B",
+      "huggingface_model": "mistralai/Mistral-7B-v0.1",
+      "num_params": "7B",
+      "hidden_size": 4096,
+      "num_layers": 32,
+      "vocab_size": 32000,
+      "seq_length": 8192,
+      "model_type": "Transformer (Mistral)"
+    },
+    {
+      "model_name": "StableLM-3B-4E1T",
+      "huggingface_model": "stabilityai/stablelm-3b-4e1t",
+      "num_params": "2.795B",
+      "hidden_size": 2560,
+      "num_layers": 32,
+      "vocab_size": 50257,
+      "seq_length": 4096,
+      "model_type": "Transformer (StableLM)"
+    },
+    {
+      "model_name": "TinyLlama-1.1B-Chat-v1.0",
+      "huggingface_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "num_params": "1.1B",
+      "hidden_size": 2048,
+      "num_layers": 24,
+      "vocab_size": 32000,
+      "seq_length": 2048,
+      "model_type": "Transformer (TinyLlama)"
+    }
+  ]
+  

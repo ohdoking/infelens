@@ -1,0 +1,1254 @@
+{
+  "prompts": [
+    {
+      "id": 1,
+      "category": "health_and_wellness",
+      "prompt": "Give three tips for staying healthy."
+    },
+    {
+      "id": 2,
+      "category": "education",
+      "prompt": "What are the three primary colors?"
+    },
+    {
+      "id": 3,
+      "category": "science",
+      "prompt": "Describe the structure of an atom."
+    },
+    {
+      "id": 4,
+      "category": "environment",
+      "prompt": "How can we reduce air pollution?"
+    },
+    {
+      "id": 5,
+      "category": "personal_development",
+      "prompt": "Describe a time when you had to make a difficult decision."
+    },
+    {
+      "id": 6,
+      "category": "technology",
+      "prompt": "Identify the odd one out. Twitter, Instagram, Telegram"
+    },
+    {
+      "id": 7,
+      "category": "mathematics",
+      "prompt": "Explain why the following fraction is equivalent to 1/4 4/16"
+    },
+    {
+      "id": 8,
+      "category": "creative_writing",
+      "prompt": "Write a short story in third person narration about a protagonist who has to make an important career decision."
+    },
+    {
+      "id": 9,
+      "category": "programming",
+      "prompt": "Render a 3D model of a house"
+    },
+    {
+      "id": 10,
+      "category": "science",
+      "prompt": "Explain the process of photosynthesis in simple terms."
+    },
+    {
+      "id": 11,
+      "category": "technology",
+      "prompt": "What is the difference between machine learning and artificial intelligence?"
+    },
+    {
+      "id": 12,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of regular exercise?"
+    },
+    {
+      "id": 13,
+      "category": "education",
+      "prompt": "Explain the concept of gravity to a 10-year-old."
+    },
+    {
+      "id": 14,
+      "category": "environment",
+      "prompt": "What are the main causes of climate change?"
+    },
+    {
+      "id": 15,
+      "category": "personal_development",
+      "prompt": "How can someone improve their public speaking skills?"
+    },
+    {
+      "id": 16,
+      "category": "technology",
+      "prompt": "What is blockchain technology and how does it work?"
+    },
+    {
+      "id": 17,
+      "category": "mathematics",
+      "prompt": "Solve the following equation: 2x + 5 = 15"
+    },
+    {
+      "id": 18,
+      "category": "creative_writing",
+      "prompt": "Write a poem about the changing seasons."
+    },
+    {
+      "id": 19,
+      "category": "programming",
+      "prompt": "Write a Python function to find the factorial of a number."
+    },
+    {
+      "id": 20,
+      "category": "science",
+      "prompt": "What is the difference between a virus and a bacterium?"
+    },
+    {
+      "id": 21,
+      "category": "technology",
+      "prompt": "Explain how a computer processes information."
+    },
+    {
+      "id": 22,
+      "category": "health_and_wellness",
+      "prompt": "What are the key components of a balanced diet?"
+    },
+    {
+      "id": 23,
+      "category": "education",
+      "prompt": "What is the difference between weather and climate?"
+    },
+    {
+      "id": 24,
+      "category": "environment",
+      "prompt": "How can individuals reduce their carbon footprint?"
+    },
+    {
+      "id": 25,
+      "category": "personal_development",
+      "prompt": "What are effective strategies for time management?"
+    },
+    {
+      "id": 26,
+      "category": "technology",
+      "prompt": "What is cloud computing and how does it work?"
+    },
+    {
+      "id": 27,
+      "category": "mathematics",
+      "prompt": "Explain the concept of probability to a beginner."
+    },
+    {
+      "id": 28,
+      "category": "creative_writing",
+      "prompt": "Write a short story about a robot learning to paint."
+    },
+    {
+      "id": 29,
+      "category": "programming",
+      "prompt": "Create a simple web scraper using Python."
+    },
+    {
+      "id": 30,
+      "category": "science",
+      "prompt": "What is the theory of relativity?"
+    },
+    {
+      "id": 31,
+      "category": "technology",
+      "prompt": "How does a smartphone camera work?"
+    },
+    {
+      "id": 32,
+      "category": "health_and_wellness",
+      "prompt": "What are the effects of stress on the body?"
+    },
+    {
+      "id": 33,
+      "category": "education",
+      "prompt": "Explain the water cycle to a middle school student."
+    },
+    {
+      "id": 34,
+      "category": "environment",
+      "prompt": "What are renewable energy sources?"
+    },
+    {
+      "id": 35,
+      "category": "personal_development",
+      "prompt": "How can someone develop better study habits?"
+    },
+    {
+      "id": 36,
+      "category": "technology",
+      "prompt": "What is the Internet of Things (IoT)?"
+    },
+    {
+      "id": 37,
+      "category": "mathematics",
+      "prompt": "What is the Pythagorean theorem?"
+    },
+    {
+      "id": 38,
+      "category": "creative_writing",
+      "prompt": "Write a dialogue between two historical figures."
+    },
+    {
+      "id": 39,
+      "category": "programming",
+      "prompt": "Implement a binary search algorithm."
+    },
+    {
+      "id": 40,
+      "category": "science",
+      "prompt": "What is DNA and how does it work?"
+    },
+    {
+      "id": 41,
+      "category": "technology",
+      "prompt": "How do self-driving cars work?"
+    },
+    {
+      "id": 42,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of meditation?"
+    },
+    {
+      "id": 43,
+      "category": "education",
+      "prompt": "What is the difference between a democracy and a republic?"
+    },
+    {
+      "id": 44,
+      "category": "environment",
+      "prompt": "What is biodiversity and why is it important?"
+    },
+    {
+      "id": 45,
+      "category": "personal_development",
+      "prompt": "How can someone improve their writing skills?"
+    },
+    {
+      "id": 46,
+      "category": "technology",
+      "prompt": "What is virtual reality and how does it work?"
+    },
+    {
+      "id": 47,
+      "category": "mathematics",
+      "prompt": "What is the difference between mean, median, and mode?"
+    },
+    {
+      "id": 48,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where dreams can be recorded."
+    },
+    {
+      "id": 49,
+      "category": "programming",
+      "prompt": "Create a simple REST API using Python and Flask."
+    },
+    {
+      "id": 50,
+      "category": "science",
+      "prompt": "What is quantum mechanics?"
+    },
+    {
+      "id": 51,
+      "category": "technology",
+      "prompt": "How does a GPS system work?"
+    },
+    {
+      "id": 52,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of a plant-based diet?"
+    },
+    {
+      "id": 53,
+      "category": "education",
+      "prompt": "What is the scientific method?"
+    },
+    {
+      "id": 54,
+      "category": "environment",
+      "prompt": "What is the greenhouse effect?"
+    },
+    {
+      "id": 55,
+      "category": "personal_development",
+      "prompt": "How can someone become a better leader?"
+    },
+    {
+      "id": 56,
+      "category": "technology",
+      "prompt": "What is artificial intelligence?"
+    },
+    {
+      "id": 57,
+      "category": "mathematics",
+      "prompt": "What is calculus used for?"
+    },
+    {
+      "id": 58,
+      "category": "creative_writing",
+      "prompt": "Write a poem about artificial intelligence."
+    },
+    {
+      "id": 59,
+      "category": "programming",
+      "prompt": "Implement a sorting algorithm in Python."
+    },
+    {
+      "id": 60,
+      "category": "science",
+      "prompt": "What is the theory of evolution?"
+    },
+    {
+      "id": 61,
+      "category": "technology",
+      "prompt": "How does a computer network work?"
+    },
+    {
+      "id": 62,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of regular sleep?"
+    },
+    {
+      "id": 63,
+      "category": "education",
+      "prompt": "What is the difference between a hypothesis and a theory?"
+    },
+    {
+      "id": 64,
+      "category": "environment",
+      "prompt": "What is sustainable development?"
+    },
+    {
+      "id": 65,
+      "category": "personal_development",
+      "prompt": "How can someone improve their critical thinking skills?"
+    },
+    {
+      "id": 66,
+      "category": "technology",
+      "prompt": "What is machine learning?"
+    },
+    {
+      "id": 67,
+      "category": "mathematics",
+      "prompt": "What is the difference between correlation and causation?"
+    },
+    {
+      "id": 68,
+      "category": "creative_writing",
+      "prompt": "Write a story about a future where humans live on Mars."
+    },
+    {
+      "id": 69,
+      "category": "programming",
+      "prompt": "Create a simple game using Python and Pygame."
+    },
+    {
+      "id": 70,
+      "category": "science",
+      "prompt": "What is the difference between a solid, liquid, and gas?"
+    },
+    {
+      "id": 71,
+      "category": "technology",
+      "prompt": "How does a smartphone work?"
+    },
+    {
+      "id": 72,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of mindfulness?"
+    },
+    {
+      "id": 73,
+      "category": "education",
+      "prompt": "What is the difference between a fact and an opinion?"
+    },
+    {
+      "id": 74,
+      "category": "environment",
+      "prompt": "What is the ozone layer and why is it important?"
+    },
+    {
+      "id": 75,
+      "category": "personal_development",
+      "prompt": "How can someone improve their communication skills?"
+    },
+    {
+      "id": 76,
+      "category": "technology",
+      "prompt": "What is the difference between HTTP and HTTPS?"
+    },
+    {
+      "id": 77,
+      "category": "mathematics",
+      "prompt": "What is the difference between a prime and composite number?"
+    },
+    {
+      "id": 78,
+      "category": "creative_writing",
+      "prompt": "Write a dialogue between a human and an AI about consciousness."
+    },
+    {
+      "id": 79,
+      "category": "programming",
+      "prompt": "Create a simple database using SQL."
+    },
+    {
+      "id": 80,
+      "category": "science",
+      "prompt": "What is the difference between a plant and animal cell?"
+    },
+    {
+      "id": 81,
+      "category": "technology",
+      "prompt": "What is the difference between RAM and ROM?"
+    },
+    {
+      "id": 82,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of yoga?"
+    },
+    {
+      "id": 83,
+      "category": "education",
+      "prompt": "What is the difference between a metaphor and a simile?"
+    },
+    {
+      "id": 84,
+      "category": "environment",
+      "prompt": "What is the difference between weather and climate?"
+    },
+    {
+      "id": 85,
+      "category": "personal_development",
+      "prompt": "How can someone develop better problem-solving skills?"
+    },
+    {
+      "id": 86,
+      "category": "technology",
+      "prompt": "What is the difference between a virus and malware?"
+    },
+    {
+      "id": 87,
+      "category": "mathematics",
+      "prompt": "What is the difference between a mean and an average?"
+    },
+    {
+      "id": 88,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where technology has solved all problems."
+    },
+    {
+      "id": 89,
+      "category": "programming",
+      "prompt": "Create a simple web application using HTML, CSS, and JavaScript."
+    },
+    {
+      "id": 90,
+      "category": "science",
+      "prompt": "What is the difference between a theory and a law in science?"
+    },
+    {
+      "id": 91,
+      "category": "technology",
+      "prompt": "What is the difference between a CPU and GPU?"
+    },
+    {
+      "id": 92,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of drinking water?"
+    },
+    {
+      "id": 93,
+      "category": "education",
+      "prompt": "What is the difference between a primary and secondary source?"
+    },
+    {
+      "id": 94,
+      "category": "environment",
+      "prompt": "What is the difference between recycling and upcycling?"
+    },
+    {
+      "id": 95,
+      "category": "personal_development",
+      "prompt": "How can someone improve their memory?"
+    },
+    {
+      "id": 96,
+      "category": "technology",
+      "prompt": "What is the difference between a website and a web application?"
+    },
+    {
+      "id": 97,
+      "category": "mathematics",
+      "prompt": "What is the difference between a fraction and a decimal?"
+    },
+    {
+      "id": 98,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where books are illegal."
+    },
+    {
+      "id": 99,
+      "category": "programming",
+      "prompt": "Create a simple chatbot using Python."
+    },
+    {
+      "id": 100,
+      "category": "science",
+      "prompt": "What is the difference between a hypothesis and a prediction?"
+    },
+    {
+      "id": 101,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of regular meditation practice?"
+    },
+    {
+      "id": 102,
+      "category": "education",
+      "prompt": "Explain the concept of photosynthesis to a 5th grader."
+    },
+    {
+      "id": 103,
+      "category": "science",
+      "prompt": "What is the difference between a comet and an asteroid?"
+    },
+    {
+      "id": 104,
+      "category": "environment",
+      "prompt": "How does plastic pollution affect marine life?"
+    },
+    {
+      "id": 105,
+      "category": "personal_development",
+      "prompt": "What are effective strategies for overcoming procrastination?"
+    },
+    {
+      "id": 106,
+      "category": "technology",
+      "prompt": "What is the difference between AR and VR?"
+    },
+    {
+      "id": 107,
+      "category": "mathematics",
+      "prompt": "Explain the concept of probability in everyday life."
+    },
+    {
+      "id": 108,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where music is the only form of communication."
+    },
+    {
+      "id": 109,
+      "category": "programming",
+      "prompt": "Create a simple weather app using Python."
+    },
+    {
+      "id": 110,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of a Mediterranean diet?"
+    },
+    {
+      "id": 111,
+      "category": "education",
+      "prompt": "What is the difference between a simile and a metaphor?"
+    },
+    {
+      "id": 112,
+      "category": "science",
+      "prompt": "How do vaccines work in the human body?"
+    },
+    {
+      "id": 113,
+      "category": "environment",
+      "prompt": "What is the impact of deforestation on climate change?"
+    },
+    {
+      "id": 114,
+      "category": "personal_development",
+      "prompt": "How can someone develop better listening skills?"
+    },
+    {
+      "id": 115,
+      "category": "technology",
+      "prompt": "What is the difference between 4G and 5G networks?"
+    },
+    {
+      "id": 116,
+      "category": "mathematics",
+      "prompt": "What is the Fibonacci sequence and where is it found in nature?"
+    },
+    {
+      "id": 117,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where everyone can read minds."
+    },
+    {
+      "id": 118,
+      "category": "programming",
+      "prompt": "Create a simple task management system using Python."
+    },
+    {
+      "id": 119,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of regular exercise for mental health?"
+    },
+    {
+      "id": 120,
+      "category": "education",
+      "prompt": "What is the difference between a primary and secondary source in research?"
+    },
+    {
+      "id": 121,
+      "category": "science",
+      "prompt": "What is the difference between a solar and lunar eclipse?"
+    },
+    {
+      "id": 122,
+      "category": "environment",
+      "prompt": "How can individuals reduce their water footprint?"
+    },
+    {
+      "id": 123,
+      "category": "personal_development",
+      "prompt": "What are effective strategies for managing stress at work?"
+    },
+    {
+      "id": 124,
+      "category": "technology",
+      "prompt": "What is the difference between a CPU and a GPU?"
+    },
+    {
+      "id": 125,
+      "category": "mathematics",
+      "prompt": "What is the difference between a mean and a median?"
+    },
+    {
+      "id": 126,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where dreams can be recorded and shared."
+    },
+    {
+      "id": 127,
+      "category": "programming",
+      "prompt": "Create a simple file encryption program using Python."
+    },
+    {
+      "id": 128,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of a plant-based diet for the environment?"
+    },
+    {
+      "id": 129,
+      "category": "education",
+      "prompt": "What is the difference between active and passive learning?"
+    },
+    {
+      "id": 130,
+      "category": "science",
+      "prompt": "What is the difference between a virus and a bacteria?"
+    },
+    {
+      "id": 131,
+      "category": "environment",
+      "prompt": "What is the impact of air pollution on human health?"
+    },
+    {
+      "id": 132,
+      "category": "personal_development",
+      "prompt": "How can someone improve their public speaking skills?"
+    },
+    {
+      "id": 133,
+      "category": "technology",
+      "prompt": "What is the difference between machine learning and deep learning?"
+    },
+    {
+      "id": 134,
+      "category": "mathematics",
+      "prompt": "What is the difference between a rational and irrational number?"
+    },
+    {
+      "id": 135,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where technology has replaced all human jobs."
+    },
+    {
+      "id": 136,
+      "category": "programming",
+      "prompt": "Create a simple password generator using Python."
+    },
+    {
+      "id": 137,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of regular sleep for brain function?"
+    },
+    {
+      "id": 138,
+      "category": "education",
+      "prompt": "What is the difference between a thesis and a hypothesis?"
+    },
+    {
+      "id": 139,
+      "category": "science",
+      "prompt": "What is the difference between a star and a planet?"
+    },
+    {
+      "id": 140,
+      "category": "environment",
+      "prompt": "What is the impact of climate change on biodiversity?"
+    },
+    {
+      "id": 141,
+      "category": "personal_development",
+      "prompt": "How can someone develop better time management skills?"
+    },
+    {
+      "id": 142,
+      "category": "technology",
+      "prompt": "What is the difference between a website and a web application?"
+    },
+    {
+      "id": 143,
+      "category": "mathematics",
+      "prompt": "What is the difference between a function and an equation?"
+    },
+    {
+      "id": 144,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where memories can be bought and sold."
+    },
+    {
+      "id": 145,
+      "category": "programming",
+      "prompt": "Create a simple image processing program using Python."
+    },
+    {
+      "id": 146,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of regular exercise for heart health?"
+    },
+    {
+      "id": 147,
+      "category": "education",
+      "prompt": "What is the difference between a fact and an opinion?"
+    },
+    {
+      "id": 148,
+      "category": "science",
+      "prompt": "What is the difference between a hypothesis and a theory?"
+    },
+    {
+      "id": 149,
+      "category": "environment",
+      "prompt": "What is the impact of plastic waste on ocean ecosystems?"
+    },
+    {
+      "id": 150,
+      "category": "personal_development",
+      "prompt": "How can someone improve their emotional intelligence?"
+    },
+    {
+      "id": 151,
+      "category": "technology",
+      "prompt": "What is the difference between a server and a client?"
+    },
+    {
+      "id": 152,
+      "category": "mathematics",
+      "prompt": "What is the difference between a prime and composite number?"
+    },
+    {
+      "id": 153,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where emotions can be quantified."
+    },
+    {
+      "id": 154,
+      "category": "programming",
+      "prompt": "Create a simple data visualization program using Python."
+    },
+    {
+      "id": 155,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of mindfulness meditation?"
+    },
+    {
+      "id": 156,
+      "category": "education",
+      "prompt": "What is the difference between a primary and secondary source?"
+    },
+    {
+      "id": 157,
+      "category": "science",
+      "prompt": "What is the difference between a cell and a tissue?"
+    },
+    {
+      "id": 158,
+      "category": "environment",
+      "prompt": "What is the impact of deforestation on wildlife?"
+    },
+    {
+      "id": 159,
+      "category": "personal_development",
+      "prompt": "How can someone develop better leadership skills?"
+    },
+    {
+      "id": 160,
+      "category": "technology",
+      "prompt": "What is the difference between a database and a data warehouse?"
+    },
+    {
+      "id": 161,
+      "category": "mathematics",
+      "prompt": "What is the difference between a vector and a scalar?"
+    },
+    {
+      "id": 162,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where books are illegal."
+    },
+    {
+      "id": 163,
+      "category": "programming",
+      "prompt": "Create a simple web scraper using Python."
+    },
+    {
+      "id": 164,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of a balanced diet?"
+    },
+    {
+      "id": 165,
+      "category": "education",
+      "prompt": "What is the difference between a metaphor and an analogy?"
+    },
+    {
+      "id": 166,
+      "category": "science",
+      "prompt": "What is the difference between a gene and a chromosome?"
+    },
+    {
+      "id": 167,
+      "category": "environment",
+      "prompt": "What is the impact of air pollution on climate change?"
+    },
+    {
+      "id": 168,
+      "category": "personal_development",
+      "prompt": "How can someone improve their problem-solving skills?"
+    },
+    {
+      "id": 169,
+      "category": "technology",
+      "prompt": "What is the difference between a router and a switch?"
+    },
+    {
+      "id": 170,
+      "category": "mathematics",
+      "prompt": "What is the difference between a mean and a mode?"
+    },
+    {
+      "id": 171,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where thoughts can be directly shared."
+    },
+    {
+      "id": 172,
+      "category": "programming",
+      "prompt": "Create a simple game using Python and Pygame."
+    },
+    {
+      "id": 173,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of regular exercise for mental health?"
+    },
+    {
+      "id": 174,
+      "category": "education",
+      "prompt": "What is the difference between a primary and secondary source?"
+    },
+    {
+      "id": 175,
+      "category": "science",
+      "prompt": "What is the difference between a plant and animal cell?"
+    },
+    {
+      "id": 176,
+      "category": "environment",
+      "prompt": "What is the impact of climate change on agriculture?"
+    },
+    {
+      "id": 177,
+      "category": "personal_development",
+      "prompt": "How can someone develop better communication skills?"
+    },
+    {
+      "id": 178,
+      "category": "technology",
+      "prompt": "What is the difference between a virus and malware?"
+    },
+    {
+      "id": 179,
+      "category": "mathematics",
+      "prompt": "What is the difference between a fraction and a decimal?"
+    },
+    {
+      "id": 180,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where dreams can be programmed."
+    },
+    {
+      "id": 181,
+      "category": "programming",
+      "prompt": "Create a simple REST API using Python and Flask."
+    },
+    {
+      "id": 182,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of regular sleep for physical health?"
+    },
+    {
+      "id": 183,
+      "category": "education",
+      "prompt": "What is the difference between a fact and a theory?"
+    },
+    {
+      "id": 184,
+      "category": "science",
+      "prompt": "What is the difference between a theory and a law?"
+    },
+    {
+      "id": 185,
+      "category": "environment",
+      "prompt": "What is the impact of plastic pollution on marine life?"
+    },
+    {
+      "id": 186,
+      "category": "personal_development",
+      "prompt": "How can someone improve their critical thinking skills?"
+    },
+    {
+      "id": 187,
+      "category": "technology",
+      "prompt": "What is the difference between HTTP and HTTPS?"
+    },
+    {
+      "id": 188,
+      "category": "mathematics",
+      "prompt": "What is the difference between a prime and composite number?"
+    },
+    {
+      "id": 189,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where technology has solved all problems."
+    },
+    {
+      "id": 190,
+      "category": "programming",
+      "prompt": "Create a simple database using SQL."
+    },
+    {
+      "id": 191,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of a Mediterranean diet?"
+    },
+    {
+      "id": 192,
+      "category": "education",
+      "prompt": "What is the difference between a primary and secondary source?"
+    },
+    {
+      "id": 193,
+      "category": "science",
+      "prompt": "What is the difference between a solid, liquid, and gas?"
+    },
+    {
+      "id": 194,
+      "category": "environment",
+      "prompt": "What is the impact of deforestation on climate change?"
+    },
+    {
+      "id": 195,
+      "category": "personal_development",
+      "prompt": "How can someone develop better study habits?"
+    },
+    {
+      "id": 196,
+      "category": "technology",
+      "prompt": "What is the difference between a CPU and GPU?"
+    },
+    {
+      "id": 197,
+      "category": "mathematics",
+      "prompt": "What is the difference between a mean and an average?"
+    },
+    {
+      "id": 198,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where books are illegal."
+    },
+    {
+      "id": 199,
+      "category": "programming",
+      "prompt": "Create a simple chatbot using Python."
+    },
+    {
+      "id": 200,
+      "category": "science",
+      "prompt": "What is the difference between a hypothesis and a prediction?"
+    },
+    {
+      "id": 201,
+      "category": "technology",
+      "prompt": "What is the difference between a website and a web application?"
+    },
+    {
+      "id": 202,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of drinking water?"
+    },
+    {
+      "id": 203,
+      "category": "education",
+      "prompt": "What is the difference between a metaphor and a simile?"
+    },
+    {
+      "id": 204,
+      "category": "environment",
+      "prompt": "What is the difference between recycling and upcycling?"
+    },
+    {
+      "id": 205,
+      "category": "personal_development",
+      "prompt": "How can someone improve their memory?"
+    },
+    {
+      "id": 206,
+      "category": "technology",
+      "prompt": "What is the difference between a virus and malware?"
+    },
+    {
+      "id": 207,
+      "category": "mathematics",
+      "prompt": "What is the difference between a mean and an average?"
+    },
+    {
+      "id": 208,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where technology has solved all problems."
+    },
+    {
+      "id": 209,
+      "category": "programming",
+      "prompt": "Create a simple web application using HTML, CSS, and JavaScript."
+    },
+    {
+      "id": 210,
+      "category": "science",
+      "prompt": "What is the difference between a theory and a law in science?"
+    },
+    {
+      "id": 211,
+      "category": "technology",
+      "prompt": "What is the difference between a CPU and GPU?"
+    },
+    {
+      "id": 212,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of drinking water?"
+    },
+    {
+      "id": 213,
+      "category": "education",
+      "prompt": "What is the difference between a primary and secondary source?"
+    },
+    {
+      "id": 214,
+      "category": "environment",
+      "prompt": "What is the difference between weather and climate?"
+    },
+    {
+      "id": 215,
+      "category": "personal_development",
+      "prompt": "How can someone develop better problem-solving skills?"
+    },
+    {
+      "id": 216,
+      "category": "technology",
+      "prompt": "What is the difference between a virus and malware?"
+    },
+    {
+      "id": 217,
+      "category": "mathematics",
+      "prompt": "What is the difference between a mean and an average?"
+    },
+    {
+      "id": 218,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where books are illegal."
+    },
+    {
+      "id": 219,
+      "category": "programming",
+      "prompt": "Create a simple chatbot using Python."
+    },
+    {
+      "id": 220,
+      "category": "science",
+      "prompt": "What is the difference between a hypothesis and a prediction?"
+    },
+    {
+      "id": 221,
+      "category": "technology",
+      "prompt": "What is the difference between a website and a web application?"
+    },
+    {
+      "id": 222,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of regular exercise?"
+    },
+    {
+      "id": 223,
+      "category": "education",
+      "prompt": "What is the difference between a fact and an opinion?"
+    },
+    {
+      "id": 224,
+      "category": "environment",
+      "prompt": "What is the impact of climate change on biodiversity?"
+    },
+    {
+      "id": 225,
+      "category": "personal_development",
+      "prompt": "How can someone improve their public speaking skills?"
+    },
+    {
+      "id": 226,
+      "category": "technology",
+      "prompt": "What is the difference between machine learning and deep learning?"
+    },
+    {
+      "id": 227,
+      "category": "mathematics",
+      "prompt": "What is the difference between a rational and irrational number?"
+    },
+    {
+      "id": 228,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where technology has replaced all human jobs."
+    },
+    {
+      "id": 229,
+      "category": "programming",
+      "prompt": "Create a simple password generator using Python."
+    },
+    {
+      "id": 230,
+      "category": "science",
+      "prompt": "What is the difference between a star and a planet?"
+    },
+    {
+      "id": 231,
+      "category": "technology",
+      "prompt": "What is the difference between a server and a client?"
+    },
+    {
+      "id": 232,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of mindfulness meditation?"
+    },
+    {
+      "id": 233,
+      "category": "education",
+      "prompt": "What is the difference between active and passive learning?"
+    },
+    {
+      "id": 234,
+      "category": "environment",
+      "prompt": "What is the impact of air pollution on human health?"
+    },
+    {
+      "id": 235,
+      "category": "personal_development",
+      "prompt": "How can someone develop better leadership skills?"
+    },
+    {
+      "id": 236,
+      "category": "technology",
+      "prompt": "What is the difference between a database and a data warehouse?"
+    },
+    {
+      "id": 237,
+      "category": "mathematics",
+      "prompt": "What is the difference between a vector and a scalar?"
+    },
+    {
+      "id": 238,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where emotions can be quantified."
+    },
+    {
+      "id": 239,
+      "category": "programming",
+      "prompt": "Create a simple image processing program using Python."
+    },
+    {
+      "id": 240,
+      "category": "science",
+      "prompt": "What is the difference between a gene and a chromosome?"
+    },
+    {
+      "id": 241,
+      "category": "technology",
+      "prompt": "What is the difference between a router and a switch?"
+    },
+    {
+      "id": 242,
+      "category": "health_and_wellness",
+      "prompt": "What are the benefits of regular exercise for heart health?"
+    },
+    {
+      "id": 243,
+      "category": "education",
+      "prompt": "What is the difference between a thesis and a hypothesis?"
+    },
+    {
+      "id": 244,
+      "category": "environment",
+      "prompt": "What is the impact of plastic waste on ocean ecosystems?"
+    },
+    {
+      "id": 245,
+      "category": "personal_development",
+      "prompt": "How can someone improve their emotional intelligence?"
+    },
+    {
+      "id": 246,
+      "category": "technology",
+      "prompt": "What is the difference between 4G and 5G networks?"
+    },
+    {
+      "id": 247,
+      "category": "mathematics",
+      "prompt": "What is the Fibonacci sequence and where is it found in nature?"
+    },
+    {
+      "id": 248,
+      "category": "creative_writing",
+      "prompt": "Write a story about a world where music is the only form of communication."
+    },
+    {
+      "id": 249,
+      "category": "programming",
+      "prompt": "Create a simple task management system using Python."
+    },
+    {
+      "id": 250,
+      "category": "science",
+      "prompt": "What is the difference between a solar and lunar eclipse?"
+    }
+  ]
+} 
