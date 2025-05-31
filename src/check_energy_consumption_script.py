@@ -9,6 +9,9 @@ import torch
 from transformers import pipeline, set_seed, AutoModelForCausalLM, AutoTokenizer
 from codecarbon import EmissionsTracker
 
+# Suppress tokenizers warning
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 # Ensure required directories exist
 DATA_DIR = "data"
 OUTPUT_DIR = "output"
@@ -104,13 +107,17 @@ try:
         torch_dtype="auto"  # This will automatically choose the appropriate dtype
     )
     
-    # Create a text generation pipeline
+    # Create a text generation pipeline with proper chat template
     generator = pipeline(
         "text-generation",
         model=model,
         tokenizer=tokenizer,
-        max_new_tokens=50,  # Limit response length for testing
-        device_map="auto"
+        max_new_tokens=None,  # No token limit
+        device_map="auto",
+        do_sample=False,  # Disable sampling for deterministic results
+        num_beams=1,  # Use greedy decoding
+        temperature=1.0,  # Neutral temperature
+        repetition_penalty=1.0  # No repetition penalty
     )
     
     set_seed(42)  # For reproducibility
@@ -124,58 +131,50 @@ except Exception as e:
 # --- Measure Runtime and Energy Consumption ---
 print("\nRunning inference and measuring performance...")
 
+# Initialize single tracker for all prompts
+tracker = EmissionsTracker(
+    output_file=OUTPUT_FILE,
+    project_name="LLM_Benchmark",
+    measure_power_secs=1,
+    tracking_mode="process"
+)
+
 # Initialize list to store metrics for each prompt
 prompt_metrics: List[PromptMetrics] = []
 
-# Run inference for all prompts
-for i, prompt in enumerate(user_prompts):
-    if i % max(1, NUM_PROMPTS // 10) == 0:  # Print progress every 10% or for each prompt in local mode
-        print(f"\nProcessing prompt {i+1}/{NUM_PROMPTS}...")
+try:
+    # Start tracking for all prompts
+    tracker.start()
+    total_start_time = time.perf_counter()
     
-    # Initialize tracker for this prompt
-    prompt_tracker = EmissionsTracker(
-        output_file=f"emissions_prompt_{i+1}.csv",
-        project_name=f"LLM_Benchmark_Prompt_{i+1}",
-        measure_power_secs=1,
-        tracking_mode="process"
-    )
-    
-    try:
-        # Start tracking for this prompt
-        prompt_tracker.start()
+    # Process all prompts
+    for i, prompt in enumerate(user_prompts):
+        if i % max(1, NUM_PROMPTS // 10) == 0:  # Print progress every 10%
+            print(f"\nProcessing prompt {i+1}/{NUM_PROMPTS}...")
+        
         prompt_start_time = time.perf_counter()
         
-        # Generate response
-        response = generator(prompt, max_new_tokens=50)
-        response_text = response[0]['generated_text']
+        # Format prompt for chat model
+        chat_prompt = f"<|im_start|>user\n{prompt}<|im_end|>\n<|im_start|>assistant\n"
         
-        # End tracking for this prompt
-        prompt_end_time = time.perf_counter()
-        prompt_emissions = prompt_tracker.stop()
+        # Generate response
+        response = generator(chat_prompt, max_new_tokens=None)  # No token limit
+        full_response = response[0]['generated_text']
+        
+        # Extract just the assistant's response and remove all whitespace
+        response_text = full_response[len(chat_prompt):]
+        response_text = response_text.replace("\t", "").replace("\n", "").replace("\r", "")
         
         # Calculate metrics for this prompt
+        prompt_end_time = time.perf_counter()
         prompt_runtime = prompt_end_time - prompt_start_time
         
-        # Get energy consumption from the CSV file
-        try:
-            with open(f"emissions_prompt_{i+1}.csv", 'r') as f:
-                lines = f.readlines()
-                if len(lines) > 1:  # Skip header
-                    last_line = lines[-1].strip().split(',')
-                    energy_kwh = float(last_line[11])  # energy_consumed is at index 11
-                    energy_joules = energy_kwh * 3.6 * 10**6
-                else:
-                    energy_joules = 0.0
-        except Exception as e:
-            print(f"Warning: Could not read energy data for prompt {i+1}: {e}")
-            energy_joules = 0.0
-        
-        # Store metrics
+        # Store metrics (we'll calculate energy and CO2 at the end)
         metrics = PromptMetrics(
             prompt=prompt,
             runtime=prompt_runtime,
-            energy_joules=energy_joules,
-            co2_emissions=float(prompt_emissions) if prompt_emissions is not None else 0.0,
+            energy_joules=0.0,  # Will be calculated later
+            co2_emissions=0.0,  # Will be calculated later
             response=response_text
         )
         prompt_metrics.append(metrics)
@@ -184,19 +183,32 @@ for i, prompt in enumerate(user_prompts):
         print(f"\nResults for Prompt {i+1}:")
         print(f"Prompt: {prompt[:100]}..." if len(prompt) > 100 else f"Prompt: {prompt}")
         print(f"Runtime: {prompt_runtime:.2f} seconds")
-        print(f"Energy Consumption: {energy_joules:.2f} Joules")
-        print(f"CO2 Emissions: {metrics.co2_emissions:.6f} kg CO2eq")
         print(f"Response Preview: {response_text[:100]}..." if len(response_text) > 100 else f"Response: {response_text}")
-        
-        # Clean up individual prompt CSV file
-        try:
-            os.remove(f"emissions_prompt_{i+1}.csv")
-        except:
-            pass
-            
+    
+    # End tracking for all prompts
+    total_end_time = time.perf_counter()
+    total_emissions = tracker.stop()
+    
+    # Calculate total energy consumption
+    try:
+        with open(OUTPUT_FILE, 'r') as f:
+            lines = f.readlines()
+            if len(lines) > 1:  # Skip header
+                last_line = lines[-1].strip().split(',')
+                total_energy_kwh = float(last_line[11])  # energy_consumed is at index 11
+                total_energy_joules = total_energy_kwh * 3.6 * 10**6
+                
+                # Distribute energy consumption proportionally based on runtime
+                total_runtime = sum(m.runtime for m in prompt_metrics)
+                for metrics in prompt_metrics:
+                    metrics.energy_joules = (metrics.runtime / total_runtime) * total_energy_joules
+                    metrics.co2_emissions = (metrics.runtime / total_runtime) * float(total_emissions) if total_emissions is not None else 0.0
     except Exception as e:
-        print(f"Error processing prompt '{prompt}': {e}")
-        continue
+        print(f"Warning: Could not read energy data: {e}")
+    
+except Exception as e:
+    print(f"Error during benchmark: {e}")
+    tracker.stop()  # Make sure to stop the tracker even if there's an error
 
 # Get GPU info early to use in filename
 gpu_info = get_gpu_info()
