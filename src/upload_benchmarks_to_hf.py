@@ -46,13 +46,19 @@ def convert_to_dataframe(benchmarks_data: Dict) -> pd.DataFrame:
         # Add per-prompt metrics
         for i, prompt_data in enumerate(model_data['prompts']):
             prompt_row = row.copy()
+            # Get the model's response, which is the full generated text minus the prompt
+            prompt_text = prompt_data['prompt']
+            full_response = prompt_data['response']
+            # Remove the prompt from the response if it's included
+            response_text = full_response[len(prompt_text):] if full_response.startswith(prompt_text) else full_response
+            
             prompt_row.update({
                 'prompt_index': i + 1,  # Use 1-based index as prompt identifier
-                'prompt_text': prompt_data['prompt'],
+                'prompt_text': prompt_text,
                 'prompt_runtime': prompt_data['runtime_seconds'],
                 'prompt_energy': prompt_data['energy_joules'],
                 'prompt_co2': prompt_data['co2_emissions_kg'],
-                'prompt_response': prompt_data['response']
+                'prompt_response': response_text.strip()  # Remove any leading/trailing whitespace
             })
             rows.append(prompt_row)
     
