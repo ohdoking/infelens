@@ -1,7 +1,7 @@
 type: dev-environment
 name: infelens-proj-dev
 
-python: "3.12"
+python: "3.13"
 # Uncomment to use a custom Docker image
 #image: dstackai/base:py3.13-0.7-cuda-12.1
 ide: cursor
@@ -10,4 +10,10 @@ resources:
   gpu:
     # memory: 8GB
     vendor: nvidia
-    name: RTX070
+    name: RTX3070
+
+init:
+  - pip install poetry
+  - git clone https://github.com/ohdoking/infelens.git /infelens
+  - cd /infelens
+  - poetry install --no-root
