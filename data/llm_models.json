@@ -30,14 +30,14 @@
       "model_type": "Transformer (GPT-J)"
     },
     {
-      "model_name": "GPT-NeoX 20B",
-      "huggingface_model": "EleutherAI/gpt-neox-20b",
-      "num_params": "20B",
-      "hidden_size": 6144,
-      "num_layers": 44,
-      "vocab_size": 50432,
-      "seq_length": 2048,
-      "model_type": "Transformer (GPT-NeoX)"
+      "model_name": "Meta Llama 3 8B",
+      "huggingface_model": "meta-llama/Meta-Llama-3-8B",
+      "num_params": "8B",
+      "hidden_size": 4096,
+      "num_layers": 32,
+      "vocab_size": 128000,
+      "seq_length": 8192,
+      "model_type": "Transformer (Llama 3)"
     },
     {
       "model_name": "MPT-7B",
