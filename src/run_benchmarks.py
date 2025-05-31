@@ -46,12 +46,26 @@ def parse_args():
     parser.add_argument('--output', type=str, default=None, help='Output JSON file for merged results')
     return parser.parse_args()
 
+def ensure_output_dir():
+    """Ensure the output directory exists, create it if it doesn't."""
+    output_dir = "output"
+    if not os.path.exists(output_dir):
+        try:
+            os.makedirs(output_dir)
+            print(f"Created output directory: {output_dir}")
+        except Exception as e:
+            print(f"Error creating output directory: {e}")
+            raise
+
 def run_benchmark(model: LLMModel, local: bool = False) -> str:
     """Run the benchmark script for a single model and return the output metrics file path."""
     print(f"\n{'='*80}")
     print(f"Running benchmark for model: {model.model_name} ({model.huggingface_model})")
     print(f"Model details: {model.num_params} parameters, {model.num_layers} layers")
     print(f"{'='*80}")
+    
+    # Ensure output directory exists before running benchmark
+    ensure_output_dir()
     
     cmd = ["poetry", "run", "python", "src/check_energy_consumption_script.py", "--model", model.huggingface_model]
     if local:
@@ -155,6 +169,13 @@ def merge_results(results: List[BenchmarkResult], output_file: str):
 
 def main():
     args = parse_args()
+    
+    # Ensure output directory exists at the start
+    try:
+        ensure_output_dir()
+    except Exception as e:
+        print("Failed to create output directory. Cannot proceed with benchmarks.")
+        return
     
     # Load models from llm_models.json
     all_models = load_models()
