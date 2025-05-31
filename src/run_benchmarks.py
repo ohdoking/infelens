@@ -29,14 +29,16 @@ class BenchmarkResult:
     summary: Dict
     prompts: List[Dict]
 
-def load_models() -> List[LLMModel]:
-    """Load models from llm_models.json."""
+def load_models(local: bool = False) -> List[LLMModel]:
+    """Load models from llm_models.json or llm_models.local.json based on local flag."""
+    config_file = "llm_models.local.json" if local else "llm_models.json"
     try:
-        with open(os.path.join("data", "llm_models.json"), "r") as f:
+        with open(os.path.join("data", config_file), "r") as f:
             models_data = json.load(f)
+        print(f"Loaded {len(models_data)} models from {config_file}")
         return [LLMModel(**model) for model in models_data]
     except Exception as e:
-        print(f"Error loading models from llm_models.json: {e}")
+        print(f"Error loading models from {config_file}: {e}")
         return []
 
 def parse_args():
@@ -183,10 +185,10 @@ def main():
         print("Failed to create output directory. Cannot proceed with benchmarks.")
         return
     
-    # Load models from llm_models.json
-    all_models = load_models()
+    # Load models from appropriate config file based on local flag
+    all_models = load_models(args.local)
     if not all_models:
-        print("No models loaded from llm_models.json!")
+        print(f"No models loaded from {'llm_models.local.json' if args.local else 'llm_models.json'}!")
         return
     
     # Filter models if specific ones are requested

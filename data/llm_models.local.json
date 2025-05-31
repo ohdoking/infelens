@@ -1,0 +1,13 @@
+[
+    {
+      "model_name": "TinyLlama-1.1B-Chat-v1.0",
+      "huggingface_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "num_params": "1.1B",
+      "hidden_size": 2048,
+      "num_layers": 24,
+      "vocab_size": 32000,
+      "seq_length": 2048,
+      "model_type": "Transformer (TinyLlama)"
+    }
+  ]
+  
