@@ -29,16 +29,28 @@ class BenchmarkResult:
     summary: Dict
     prompts: List[Dict]
 
-def load_models(local: bool = False) -> List[LLMModel]:
-    """Load models from llm_models.json or llm_models.local.json based on local flag."""
-    config_file = "llm_models.local.json" if local else "llm_models.json"
+def load_models(local: bool = False, validate: bool = False) -> List[LLMModel]:
+    """Load model configurations from JSON file.
+    
+    Args:
+        local: If True, use llm_models.local.json
+        validate: If True, use validation_llm_models.json
+        If both are False, use llm_models.json
+    """
+    if local:
+        model_file = 'llm_models.local.json'
+    elif validate:
+        model_file = 'validation_llm_models.json'
+    else:
+        model_file = 'llm_models.json'
+    
     try:
-        with open(os.path.join("data", config_file), "r") as f:
+        with open(os.path.join('data', model_file), 'r') as f:
             models_data = json.load(f)
-        print(f"Loaded {len(models_data)} models from {config_file}")
+        print(f"Loaded {len(models_data)} models from {model_file}")
         return [LLMModel(**model) for model in models_data]
     except Exception as e:
-        print(f"Error loading models from {config_file}: {e}")
+        print(f"Error loading models from {model_file}: {e}")
         return []
 
 def parse_args():
@@ -46,6 +58,7 @@ def parse_args():
     parser.add_argument('--local', action='store_true', help='Run in local testing mode with limited prompts')
     parser.add_argument('--models', nargs='+', help='Specific models to benchmark (by model_name, default: all in llm_models.json)')
     parser.add_argument('--output', type=str, default=None, help='Output JSON file for merged results')
+    parser.add_argument('--validate', action='store_true', help='Use validation models instead of full model list')
     return parser.parse_args()
 
 def ensure_output_dir():
@@ -176,7 +189,31 @@ def merge_results(results: List[BenchmarkResult], output_file: str):
     print(f"Latest results saved to: {latest_file}")
 
 def main():
-    args = parse_args()
+    parser = argparse.ArgumentParser(description='Run benchmarks for multiple LLMs')
+    parser.add_argument('--local', action='store_true', help='Run in local testing mode with limited prompts')
+    parser.add_argument('--models', nargs='+', help='Specific models to benchmark (by model_name)')
+    parser.add_argument('--output', type=str, help='Output file path for merged results')
+    parser.add_argument('--validate', action='store_true', help='Use validation models instead of full model list')
+    args = parser.parse_args()
+    
+    # Validate arguments
+    if args.local and args.validate:
+        print("Error: Cannot use both --local and --validate flags together")
+        return 1
+    
+    # Load models
+    models = load_models(local=args.local, validate=args.validate)
+    if not models:
+        print("No models loaded! Cannot proceed with benchmarks.")
+        return 1
+    
+    if args.models:
+        models = [m for m in models if m.model_name in args.models]
+        if not models:
+            print(f"Error: No models found matching names: {args.models}")
+            return 1
+    
+    print(f"Loaded {len(models)} models from {'validation_llm_models.json' if args.validate else 'llm_models.json'}")
     
     # Ensure output directory exists at the start
     try:
@@ -185,27 +222,9 @@ def main():
         print("Failed to create output directory. Cannot proceed with benchmarks.")
         return
     
-    # Load models from appropriate config file based on local flag
-    all_models = load_models(args.local)
-    if not all_models:
-        print(f"No models loaded from {'llm_models.local.json' if args.local else 'llm_models.json'}!")
-        return
-    
-    # Filter models if specific ones are requested
-    if args.models:
-        models_to_run = [m for m in all_models if m.model_name in args.models]
-        if not models_to_run:
-            print(f"No models found matching: {args.models}")
-            print("Available models:")
-            for m in all_models:
-                print(f"  - {m.model_name}")
-            return
-    else:
-        models_to_run = all_models
-    
     # Run benchmarks for each model
     results = []
-    for model in models_to_run:
+    for model in models:
         metrics_file = run_benchmark(model, args.local)
         if metrics_file:
             try:
@@ -234,7 +253,7 @@ def main():
     print(f"Total models benchmarked: {len(results)}")
     print("Models:")
     for r in results:
-        model_info = next((m for m in all_models if m.huggingface_model == r.huggingface_model), None)
+        model_info = next((m for m in models if m.huggingface_model == r.huggingface_model), None)
         print(f"  - {r.model_name} ({r.huggingface_model})")
         print(f"    Parameters: {model_info.num_params}, Layers: {model_info.num_layers}")
         print(f"    Average runtime: {r.summary['average_runtime']:.2f} seconds")

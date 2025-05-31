@@ -77,8 +77,11 @@ poetry run python src/run_and_upload_benchmarks.py --token "your_hf_token"
 
 Additional options:
 ```bash
-# Run in local testing mode
+# Run in local testing mode (uses llm_models.local.json)
 poetry run python src/run_and_upload_benchmarks.py --local --token "your_hf_token"
+
+# Run validation models (uses validation_llm_models.json)
+poetry run python src/run_and_upload_benchmarks.py --validate --token "your_hf_token"
 
 # Run specific models
 poetry run python src/run_and_upload_benchmarks.py --models "model1" "model2" --token "your_hf_token"
@@ -92,18 +95,26 @@ poetry run python src/run_and_upload_benchmarks.py --dataset "username/dataset-n
 To run benchmarks without uploading:
 
 ```bash
-# Run all models
+# Run all models (uses llm_models.json)
 poetry run python src/run_benchmarks.py
+
+# Run in local testing mode (uses llm_models.local.json)
+poetry run python src/run_benchmarks.py --local
+
+# Run validation models (uses validation_llm_models.json)
+poetry run python src/run_benchmarks.py --validate
 
 # Run specific models
 poetry run python src/run_benchmarks.py --models "model1" "model2"
 
-# Run in local testing mode
-poetry run python src/run_benchmarks.py --local
-
 # Specify custom output file
 poetry run python src/run_benchmarks.py --output "my_benchmarks.json"
 ```
+
+Note: The `--local` and `--validate` flags cannot be used together. They determine which model configuration file to use:
+- `--local`: Uses `data/llm_models.local.json` (for quick testing with a subset of models)
+- `--validate`: Uses `data/validation_llm_models.json` (for validation/testing specific models)
+- No flags: Uses `data/llm_models.json` (full model list for production runs)
 
 ### Uploading Existing Benchmarks
 
@@ -119,7 +130,12 @@ The upload script will automatically use the latest benchmark results (`merged_b
 
 ### Model Configuration
 
-Models are configured in `data/llm_models.json`. Each model entry includes:
+Models are configured in three different JSON files:
+1. `data/llm_models.json` - Full production model list
+2. `data/llm_models.local.json` - Subset of models for local testing
+3. `data/validation_llm_models.json` - Models for validation/testing
+
+Each model entry includes:
 - Model name and Hugging Face identifier
 - Parameter count
 - Architecture details (hidden size, layers, etc.)
