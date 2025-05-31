@@ -1,7 +1,7 @@
 [
     {
       "model_name": "Meta LLaMA 2 7B",
-      "huggingface_model": "meta-llama/Llama-2-7b-hf",
+      "huggingface_model": "meta-llama/Llama-2-7b",
       "num_params": "7B",
       "hidden_size": 4096,
       "num_layers": 32,
