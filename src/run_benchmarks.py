@@ -37,6 +37,10 @@ def load_models(local: bool = False, validate: bool = False) -> List[LLMModel]:
         validate: If True, use validation_llm_models.json
         If both are False, use llm_models.json
     """
+    if local and validate:
+        print("Error: Cannot use both --local and --validate flags together")
+        return []
+        
     if local:
         model_file = 'llm_models.local.json'
     elif validate:
@@ -127,10 +131,10 @@ def load_metrics(file_path: str, model: LLMModel) -> BenchmarkResult:
         prompts=data['prompts']
     )
 
-def merge_results(results: List[BenchmarkResult], output_file: str):
+def merge_results(results: List[BenchmarkResult], output_file: str, local: bool = False, validate: bool = False):
     """Merge all benchmark results into a single JSON file."""
     # Find the original model information for each benchmark result
-    all_models = load_models()
+    all_models = load_models(local=local, validate=validate)
     model_info_map = {m.huggingface_model: m for m in all_models}
     
     merged_data = {
@@ -189,31 +193,7 @@ def merge_results(results: List[BenchmarkResult], output_file: str):
     print(f"Latest results saved to: {latest_file}")
 
 def main():
-    parser = argparse.ArgumentParser(description='Run benchmarks for multiple LLMs')
-    parser.add_argument('--local', action='store_true', help='Run in local testing mode with limited prompts')
-    parser.add_argument('--models', nargs='+', help='Specific models to benchmark (by model_name)')
-    parser.add_argument('--output', type=str, help='Output file path for merged results')
-    parser.add_argument('--validate', action='store_true', help='Use validation models instead of full model list')
-    args = parser.parse_args()
-    
-    # Validate arguments
-    if args.local and args.validate:
-        print("Error: Cannot use both --local and --validate flags together")
-        return 1
-    
-    # Load models
-    models = load_models(local=args.local, validate=args.validate)
-    if not models:
-        print("No models loaded! Cannot proceed with benchmarks.")
-        return 1
-    
-    if args.models:
-        models = [m for m in models if m.model_name in args.models]
-        if not models:
-            print(f"Error: No models found matching names: {args.models}")
-            return 1
-    
-    print(f"Loaded {len(models)} models from {'validation_llm_models.json' if args.validate else 'llm_models.json'}")
+    args = parse_args()
     
     # Ensure output directory exists at the start
     try:
@@ -222,9 +202,27 @@ def main():
         print("Failed to create output directory. Cannot proceed with benchmarks.")
         return
     
+    # Load models from appropriate config file based on flags
+    all_models = load_models(local=args.local, validate=args.validate)
+    if not all_models:
+        print("No models loaded! Cannot proceed with benchmarks.")
+        return
+    
+    # Filter models if specific ones are requested
+    if args.models:
+        models_to_run = [m for m in all_models if m.model_name in args.models]
+        if not models_to_run:
+            print(f"No models found matching: {args.models}")
+            print("Available models:")
+            for m in all_models:
+                print(f"  - {m.model_name}")
+            return
+    else:
+        models_to_run = all_models
+    
     # Run benchmarks for each model
     results = []
-    for model in models:
+    for model in models_to_run:
         metrics_file = run_benchmark(model, args.local)
         if metrics_file:
             try:
@@ -246,14 +244,14 @@ def main():
         args.output = os.path.join("output", args.output)
     
     # Merge and save results (both timestamped and latest versions)
-    merge_results(results, args.output)
+    merge_results(results, args.output, args.local, args.validate)
     
     # Print summary
     print("\nBenchmark Summary:")
     print(f"Total models benchmarked: {len(results)}")
     print("Models:")
     for r in results:
-        model_info = next((m for m in models if m.huggingface_model == r.huggingface_model), None)
+        model_info = next((m for m in all_models if m.huggingface_model == r.huggingface_model), None)
         print(f"  - {r.model_name} ({r.huggingface_model})")
         print(f"    Parameters: {model_info.num_params}, Layers: {model_info.num_layers}")
         print(f"    Average runtime: {r.summary['average_runtime']:.2f} seconds")
