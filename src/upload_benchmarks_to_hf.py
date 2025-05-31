@@ -22,6 +22,13 @@ def convert_to_dataframe(benchmarks_data: Dict) -> pd.DataFrame:
         hardware_info = model_data['hardware_info']
         summary = model_data['summary']
         
+        # Get GPU info safely
+        gpu_name = ''
+        gpu_memory = ''
+        if hardware_info.get('gpu_available') and hardware_info.get('gpu_devices'):
+            gpu_name = hardware_info['gpu_devices'][0].get('name', '')
+            gpu_memory = hardware_info['gpu_devices'][0].get('memory_total', '')
+        
         # Create base row with model and hardware info
         row = {
             'model_name': model_data['model_name'],
@@ -34,8 +41,8 @@ def convert_to_dataframe(benchmarks_data: Dict) -> pd.DataFrame:
             'model_type': model_info['model_type'],
             'timestamp': model_data['timestamp'],
             'hardware_cpu': hardware_info.get('device_name', ''),
-            'hardware_gpu': hardware_info.get('gpu_devices', [{}])[0].get('name', ''),
-            'hardware_ram': hardware_info.get('gpu_devices', [{}])[0].get('memory_total', ''),
+            'hardware_gpu': gpu_name,
+            'hardware_ram': gpu_memory,
             'total_prompts': model_data['total_prompts'],
             'average_runtime': summary['average_runtime'],
             'average_energy': summary['average_energy'],
